@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CoreService } from './core/core.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -9,7 +10,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
 	imports: [CommonModule, RouterModule],
 	declarations: [],
-	providers: [],
+	providers:[CoreService],
 	exports: [CommonModule, FormsModule, RouterModule]
 
 })

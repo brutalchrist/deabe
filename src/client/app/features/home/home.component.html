@@ -28,7 +28,7 @@
     
     <div class="data" *ngIf="design_method && element && profile_type">
         <h3>Datos</h3>
-        <sd-dataelement *ngIf="element == 'tirante' || element == 'columna'" [label]="'Fy (Tensión de Fluencia):'" [type]="'number'" [unit]="'[Kg/cm^2]'"></sd-dataelement>
-        <sd-dataelement *ngIf="element == 'tirante'" [label]="'T (Tracción de Trabajo):'" [type]="'number'" [unit]="'[Kg]'"></sd-dataelement>
+        <sd-dataelement *ngIf="element == 'tirante' || element == 'columna'" [id]="'Fy'" [label]="'Fy (Tensión de Fluencia):'" [type]="'number'" [unit]="'[Kg/cm^2]'"></sd-dataelement>
+        <sd-dataelement *ngIf="element == 'tirante'" [id]="'T'" [label]="'T (Tracción de Trabajo):'" [type]="'number'" [unit]="'[Kg]'"></sd-dataelement>
     </div>
 </div>

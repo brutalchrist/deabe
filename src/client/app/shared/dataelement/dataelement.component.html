@@ -1,5 +1,5 @@
 <div class="element">
     <label for="">{{ label }}</label>
-    <input type="{{ type }}">
+    <input type="{{ type }}" (change)="sendValue(input)" #input>
     <label for="">{{ unit }}</label>
 </div>
