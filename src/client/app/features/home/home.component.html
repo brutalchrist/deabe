@@ -1,0 +1,34 @@
+<div class="content">
+    <div class="initial_data">
+        <div class="design_method">
+            <button (click)="setDesignMethod('asd')" class="{{design_method == 'asd' ? 'selected': ''}}">ASD</button>
+            <button (click)="setDesignMethod('lrfd')" class="{{design_method == 'lrfd' ? 'selected': ''}}">LRFD</button>
+        </div>
+        <div class="element" *ngIf="design_method">
+            <button (click)="setElement('tirante')" class="{{element == 'tirante' ? 'selected': ''}}">Tirante</button>
+            <button (click)="setElement('columna')" class="{{element == 'columna' ? 'selected': ''}}">Columna</button>
+            <button (click)="setElement('viga')" class="{{element == 'viga' ? 'selected': ''}}">Viga</button>
+        </div>
+        <div class="flexion_type" *ngIf="element == 'viga'">
+            <button (click)="setFlexionType('pura')" class="{{flexion_type == 'pura' ? 'selected': ''}}">Flexión Pura</button>
+            <!--Compuesta-->
+            <button (click)="setFlexionType('corte')" class="{{flexion_type == 'corte' ? 'selected': ''}}">Flexión Corte</button>
+            <!--Compresión-->
+            <button (click)="setFlexionType('debil')" class="{{flexion_type == 'debil' ? 'selected': ''}}">Esfuerzo en el eje débil</button>
+            <button (click)="setFlexionType('fuerte')" class="{{flexion_type == 'fuerte' ? 'selected': ''}}">Esfuerzo en el eje fuerte</button>
+        </div>
+        <div class="profile_type" *ngIf="element">
+            <button (click)="setProfileType('c')" class="{{profile_type == 'c' ? 'selected': ''}}">C</button>
+            <button (click)="setProfileType('u')" class="{{profile_type == 'u' ? 'selected': ''}}">U</button>
+            <button (click)="setProfileType('t')" class="{{profile_type == 't' ? 'selected': ''}}">T</button>
+            <button (click)="setProfileType('o')" class="{{profile_type == 'o' ? 'selected': ''}}">O</button>
+            <button *ngIf="element == 'tirante'" (click)="setProfileType('-')" class="{{profile_type == '-' ? 'selected': ''}}">-</button>
+        </div>
+    </div>
+    
+    <div class="data" *ngIf="design_method && element && profile_type">
+        <h3>Datos</h3>
+        <sd-dataelement *ngIf="element == 'tirante' || element == 'columna'" [label]="'Fy (Tensión de Fluencia):'" [type]="'number'" [unit]="'[Kg/cm^2]'"></sd-dataelement>
+        <sd-dataelement *ngIf="element == 'tirante'" [label]="'T (Tracción de Trabajo):'" [type]="'number'" [unit]="'[Kg]'"></sd-dataelement>
+    </div>
+</div>

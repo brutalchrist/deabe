@@ -1,0 +1,26 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+    .initial_data {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    
+        button {
+            margin-right: 10px;
+        }
+    
+        .selected {
+            font-weight: bold;
+            background-color: #062550;
+        }
+    
+        .design_method, .element, .profile_type, .flexion_type {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+    }
+}
